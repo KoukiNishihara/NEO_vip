@@ -8,7 +8,7 @@ import android.util.Log;
 public class TestOpenHelper extends SQLiteOpenHelper {
 
     // データーベースのバージョン
-    private static final int DATABASE_VERSION = 1;
+    private static final int DATABASE_VERSION = 2;
 
     // データーベース名
     private static final String DATABASE_NAME = "TestDB.db";
@@ -16,12 +16,16 @@ public class TestOpenHelper extends SQLiteOpenHelper {
     private static final String _ID = "_id";
     private static final String COLUMN_NAME_TITLE = "date";
     private static final String COLUMN_NAME_SUBTITLE = "score";
+    private static final String COLUMN_NAME_SUBTITLE2 = "level";
+    private static final String COLUMN_NAME_SUBTITLE3 = "sec";
 
     private static final String SQL_CREATE_ENTRIES =
             "CREATE TABLE " + TABLE_NAME + " (" +
                     _ID + " INTEGER PRIMARY KEY," +
                     COLUMN_NAME_TITLE + " TEXT," +
-                    COLUMN_NAME_SUBTITLE + " INTEGER)";
+                    COLUMN_NAME_SUBTITLE  + " TEXT," +
+                    COLUMN_NAME_SUBTITLE2  + " TEXT," +
+                    COLUMN_NAME_SUBTITLE3 + " INTEGER)";
 
     private static final String SQL_DELETE_ENTRIES =
             "DROP TABLE IF EXISTS " + TABLE_NAME;

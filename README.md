@@ -1,9 +1,3 @@
-# TensorFlow Lite PoseNet Android Demo
-### Overview
-This is an app that continuously detects the body parts in the frames seen by
- your device's camera. These instructions walk you through building and running
- the demo on an Android device. Camera captures are discarded immediately after
- use, nothing is stored or saved.
 
 ![Demo Image](posenetimage.png)
 
@@ -22,8 +16,8 @@ This is an app that continuously detects the body parts in the frames seen by
 `Open an existing Android Studio project`.
 
 * From the `Open File or Project` window that appears, navigate to and select
- the `tensorflow-lite/examples/posenet/android` directory from wherever you
- cloned the TensorFlow Lite sample GitHub repo. Click `OK`.
+ the `PlankZer0` directory from wherever you
+ cloned the PlankZer0 GitHub repo. Click `OK`.
 
 * If it asks you to do a `Gradle Sync`, click `OK`.
 
@@ -56,11 +50,11 @@ _Please do not delete the assets folder content_. If you explicitly deleted the
 
 # enpit2019_v.i.p
 
-enPiT2019のgitリポジトリです。
+enPiT2019のリポジトリです。
 
-チーム名:vip(仮)
+チーム名:vip
 
-サービス名:プランクトレーニング君
+サービス名:plankZER0
 
 ## エレベータービッチ
 
@@ -70,7 +64,7 @@ enPiT2019のgitリポジトリです。
 
 ``部活生向け``の
 
-``ストロングZER0``は
+``plankZER0``は
 
 ``プランクトレーニング用アプリ``です
 
@@ -114,3 +108,6 @@ Wikiページを作る
 Gitのルール->masterの直pushはみんな集まってる時のみで、それ以外はbranch
 
 リモート時:説明責任を果たす(readに書く、コードに解説書くなど)
+
+## LICENSE
+このアプリには[tensorflow/examples](https://github.com/tensorflow/examples)を使用しています
