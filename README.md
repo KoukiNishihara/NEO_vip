@@ -1,5 +1,5 @@
 
-# PlankZER0
+# PlankZER0-N
 [Android端末にインストール](https://play.google.com/store/apps/details?id=vip.example.plank)
 
 
@@ -20,6 +20,8 @@
 ## LICENSE
 このアプリには[tensorflow/examples](https://github.com/tensorflow/examples)を使用しています
 
+## 備考
+[チーム開発](https://github.com/Nishikoh/PlankZer0/tree/master)から派生して個人で開発
 
 
 ## Build the demo using Android Studio
