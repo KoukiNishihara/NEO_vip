@@ -1,4 +1,4 @@
-[Android端末にインストール](https://drive.google.com/open?id=1f81UBDmH4cshi4L3_VLPpsDE2K6xx1Nr)
+[Android端末にインストール](https://play.google.com/store/apps/details?id=vip.example.plank)
 
 # PlankZER0
 
