@@ -17,7 +17,7 @@
 package org.tensorflow.lite.examples.posenet
 
 import android.Manifest
-import android.app.AlertDialog
+import androidx.appcompat.app.AlertDialog
 import android.app.Dialog
 import android.os.Bundle
 //import android.support.v4.app.DialogFragment
@@ -30,7 +30,7 @@ import vip.example.plank.R
 class ConfirmationDialog : DialogFragment() {
 
   override fun onCreateDialog(savedInstanceState: Bundle?): Dialog =
-    AlertDialog.Builder(activity)
+    AlertDialog.Builder(activity!!)
       .setMessage(R.string.request_permission)
       .setPositiveButton(android.R.string.ok) { _, _ ->
         parentFragment!!.requestPermissions(

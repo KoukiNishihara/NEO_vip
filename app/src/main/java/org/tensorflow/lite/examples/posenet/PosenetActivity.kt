@@ -18,11 +18,9 @@ package org.tensorflow.lite.examples.posenet
 
 import android.Manifest
 //import android.androidR
-import android.app.AlertDialog
+import androidx.appcompat.app.AlertDialog
 import android.app.Dialog
 import android.content.Context
-import android.content.DialogInterface
-import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.Bitmap
 import android.graphics.Canvas
@@ -59,19 +57,13 @@ import android.view.SurfaceHolder
 import android.view.SurfaceView
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.ImageButton
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.Fragment
-import vip.example.plank.CompareActivity
-import vip.example.plank.ImageActivity
 import vip.example.plank.R
 import vip.example.plank.plankJudg
-import kotlinx.android.synthetic.main.activity_compare.*
-import kotlinx.android.synthetic.main.activity_posenet.*
 import java.util.concurrent.Semaphore
 import java.util.concurrent.TimeUnit
 import kotlin.math.abs
@@ -728,10 +720,12 @@ class PosenetActivity :
   class ErrorDialog : DialogFragment() {
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog =
-      AlertDialog.Builder(activity)
-        .setMessage(arguments!!.getString(ARG_MESSAGE))
-        .setPositiveButton(android.R.string.ok) { _, _ -> activity!!.finish() }
-        .create()
+      activity?.let {
+          AlertDialog.Builder(it)
+            .setMessage(arguments!!.getString(ARG_MESSAGE))
+            .setPositiveButton(android.R.string.ok) { _, _ -> activity!!.finish() }
+            .create()
+      }!!
 
     companion object {
 

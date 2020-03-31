@@ -124,7 +124,6 @@
     <!--            app:srcCompat="@drawable/action" />-->
 
             <TextView
-                android:id="@+id/textView"
                 android:layout_width="wrap_content"
                 android:layout_height="80dp"
                 android:layout_marginLeft="35dp"

@@ -23,7 +23,6 @@
             tools:layout_editor_absoluteY="123dp" />
 
         <TableRow
-            android:id="@+id/tableRow1"
             android:layout_width="match_parent"
             android:layout_height="447dp"
             android:layout_marginBottom="5dp">
@@ -34,7 +33,6 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/textView1"
                     android:layout_width="102dp"
                     android:layout_height="wrap_content"
                     android:background="@color/color_blue"
@@ -50,7 +48,6 @@
             </LinearLayout>
 
             <TextView
-                android:id="@+id/textView2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@color/color_blue"
@@ -64,7 +61,6 @@
                 android:textSize="22sp" />
 
             <TextView
-                android:id="@+id/textView3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="3dp"
@@ -79,7 +75,6 @@
                 android:textSize="22sp" />
 
             <TextView
-                android:id="@+id/textView4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="3dp"

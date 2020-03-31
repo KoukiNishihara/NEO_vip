@@ -36,7 +36,7 @@
         android:layout_height="270dp"
         android:contentDescription="@string/description"
         android:scaleType="fitXY"
-        android:src="@drawable/plank02"
+        app:srcCompat="@drawable/plank02"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"

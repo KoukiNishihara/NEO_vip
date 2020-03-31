@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp">
@@ -35,7 +36,7 @@
             android:layout_height="128dp"
             android:layout_margin="8dp"
             android:background="#E2E91E63"
-            android:src="@drawable/ic_local_post_office_black_24dp" />
+            app:srcCompat="@drawable/ic_local_post_office_black_24dp" />
 
         <TextView
             android:layout_width="match_parent"
@@ -53,7 +54,7 @@
             android:fontFamily="sans-serif-black"
             android:textColor="#000000"
             android:textSize="20sp"
-            android:src="@drawable/ic_live_help_black_24dp" />
+            app:srcCompat="@drawable/ic_live_help_black_24dp" />
 
         <TextView
             android:layout_width="match_parent"
@@ -73,7 +74,7 @@
             android:text="2人用"
             android:textColor="#FFFFFF"
             android:textSize="24sp"
-            android:src="@drawable/ic_camera_alt_black_24dp" />
+            app:srcCompat="@drawable/ic_camera_alt_black_24dp" />
 
         <TextView
             android:layout_width="match_parent"
@@ -92,7 +93,7 @@
             android:text="1人用"
             android:textColor="#FFFFFF"
             android:textSize="24sp"
-            android:src="@drawable/ic_videocam_off_black_24dp" />
+            app:srcCompat="@drawable/ic_videocam_off_black_24dp" />
 
         <TextView
             android:layout_width="match_parent"
