@@ -115,10 +115,6 @@ class BiginnerActivity : AppCompatActivity(), SensorEventListener {
         No2 = sp.getInt("int_No2", 0)
         No3 = sp.getInt("int_No3", 0)
 
-
-
-
-
         startButton = findViewById(R.id.start_button)//タイマーのボタン
         stopButton = findViewById(R.id.stop_button)//タイマーのボタン
         setCountButton = findViewById(R.id.set_button)

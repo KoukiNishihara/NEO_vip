@@ -2,18 +2,12 @@ package vip.example.plank
 
 //AndroidX
 
-import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
-
-import android.os.Build
 import android.os.Bundle
 import android.widget.Button
 import android.content.Intent
-import android.widget.ImageView
 import androidx.appcompat.app.AlertDialog
-import android.app.Dialog
 import android.widget.ImageButton
-import android.app.DialogFragment
 import android.content.Context
 
 class SensorActivity : AppCompatActivity() {
@@ -89,16 +83,6 @@ class SensorActivity : AppCompatActivity() {
         }
 
 
-        //        //ホーム画面に戻る処理
-        //        Button returnButton = findViewById(R.id.return_sub);
-        //        returnButton.setOnClickListener(new OnClickListener() {
-        //            @Override
-        //            public void onClick(View v) {
-        //                finish();
-        //            }
-        //        });
-
-
         val helpButton = findViewById<ImageButton>(R.id.helpButton)
 
         // ボタンタップでAlertを表示させる
@@ -111,42 +95,5 @@ class SensorActivity : AppCompatActivity() {
         }
     }
 
-    fun setTextView(message: String) {
 
-    }
-
-    // DialogFragment を継承したクラス
-    class AlertDialogFragment : DialogFragment() {
-        // 選択肢のリスト
-        private val menulist = arrayOf("選択(1)", "選択(2)", "選択(3)")
-
-        @RequiresApi(api = Build.VERSION_CODES.M)
-        override fun onCreateDialog(savedInstanceState: Bundle): Dialog {
-
-            val alert = AlertDialog.Builder(activity)
-
-            val imageView = ImageView(context)
-            imageView.setImageResource(R.drawable.help1)
-            // タイトル
-            alert.setTitle("1人用の使い方！")
-            alert.setView(imageView)
-            alert.setView(R.layout.activity_help1)
-            alert.setPositiveButton("OK", null)
-            //alert.show();
-            //alert.setItems(menulist, new DialogInterface.OnClickListener() {
-            // @Override
-            //public void onClick(DialogInterface dialog, int idx) {
-
-            //    }
-            //}
-            // });
-
-            return alert.create()
-        }
-
-        private fun setMassage(message: String) {
-            val mainActivity = activity as MainActivity
-            // mainActivity.setTextView(message);
-        }
-    }
 }
