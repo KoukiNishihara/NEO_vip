@@ -18,7 +18,8 @@
 
 
 ## LICENSE
-このアプリには[tensorflow/examples](https://github.com/tensorflow/examples)を使用しています
+[Apache License 2.0](https://github.com/Nishikoh/PlankZer0/blob/Nishikoh-personal/LICENSE)
+リポジトリ内のpkg、ソースコード、モデルの一部に[tensorflow/examples](https://github.com/tensorflow/examples)を使用しています。それらのライセンスは[こちら](https://github.com/tensorflow/examples/blob/master/LICENSE)
 
 ## 備考
 [チーム開発](https://github.com/Nishikoh/PlankZer0/tree/master)から派生して個人で開発
