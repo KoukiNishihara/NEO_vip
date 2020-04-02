@@ -39,13 +39,11 @@ class MainActivity : AppCompatActivity() {
         if (isFirstTime) {
             AlertDialog.Builder(this)
                 .setTitle("使い方！")
-                .setView(R.layout.activity_help1)
+                .setView(R.layout.activity_help_main)
                 .setPositiveButton( "OK", null )
                 .show()
         }
 
-//        val imageView = findViewById<ImageView>(R.id.image_view)
-        //        imageView.setImageResource(R.drawable.plank01);
 
         //カメラモードに移動
         val PhotoButton = findViewById<ImageButton>(R.id.ViewImg)
@@ -67,7 +65,7 @@ class MainActivity : AppCompatActivity() {
         helpButton.setOnClickListener {
             AlertDialog.Builder(this)
                 .setTitle("使い方！")
-                .setView(R.layout.activity_help1)
+                .setView(R.layout.activity_help_main)
                 .setPositiveButton( "OK", null )
                 .show()
         }

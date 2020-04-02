@@ -50,13 +50,11 @@ class SensorActivity : AppCompatActivity() {
             editor.putInt("int_No3", No3) // int_1というキーに i の中身(2)を設定
             editor.commit() // ここで実際にファイルに保存
 
-            // show dialog
-            val fragmentManager = fragmentManager
-
-            // DialogFragment を継承したAlertDialogFragmentのインスタンス
-            val dialogFragment = AlertDialogFragment()
-            // DialogFragmentの表示
-            dialogFragment.show(fragmentManager, "test alert dialog")
+            AlertDialog.Builder(this)
+                .setTitle("使い方！")
+                .setView(R.layout.activity_help1)
+                .setPositiveButton( "OK", null )
+                .show()
 
         }
 
@@ -105,12 +103,11 @@ class SensorActivity : AppCompatActivity() {
 
         // ボタンタップでAlertを表示させる
         helpButton.setOnClickListener {
-            val fragmentManager = fragmentManager
-
-            // DialogFragment を継承したAlertDialogFragmentのインスタンス
-            val dialogFragment = AlertDialogFragment()
-            // DialogFragmentの表示
-            dialogFragment.show(fragmentManager, "test alert dialog")
+            AlertDialog.Builder(this)
+                .setTitle("使い方！")
+                .setView(R.layout.activity_help1)
+                .setPositiveButton( "OK", null )
+                .show()
         }
     }
 
