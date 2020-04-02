@@ -88,12 +88,15 @@ class Posenet(
   /** An Interpreter for the TFLite model.   */
   private var interpreter: Interpreter? = null
   private var gpuDelegate: GpuDelegate? = null
+  private val NUM_LITE_THREADS = 4
+
 
   private fun getInterpreter(): Interpreter {
     if (interpreter != null) {
       return interpreter!!
     }
     val options = Interpreter.Options()
+    options.setNumThreads(NUM_LITE_THREADS)
     when (device) {
       Device.CPU -> { }
       Device.GPU -> {
@@ -136,14 +139,7 @@ class Posenet(
 
     val mean = 128.0f
     val std = 128.0f
-//    for (row in 0 until bitmap.height) {
-//      for (col in 0 until bitmap.width) {
-//        val pixelValue = bitmap.getPixel(col, row)
-//        inputBuffer.putFloat(((pixelValue shr 16 and 0xFF) - mean) / std)
-//        inputBuffer.putFloat(((pixelValue shr 8 and 0xFF) - mean) / std)
-//        inputBuffer.putFloat(((pixelValue and 0xFF) - mean) / std)
-//      }
-//    }
+
     for (pixelValue in pixels) {
       inputBuffer.putFloat(((pixelValue shr 16 and 0xFF) - mean) / std)
       inputBuffer.putFloat(((pixelValue shr 8 and 0xFF) - mean) / std)
@@ -211,23 +207,13 @@ class Posenet(
   fun estimateSinglePose(bitmap: Bitmap): Person {
     val estimationStartTimeNanos = SystemClock.elapsedRealtimeNanos()
     val inputArray = arrayOf(initInputArray(bitmap))
-//    Log.i(
-//      "posenet",
-//      String.format(
-//        "Scaling to [-1,1] took %.2f ms",
-//        1.0f * (SystemClock.elapsedRealtimeNanos() - estimationStartTimeNanos) / 1_000_000
-//      )
-//    )
+
 
     val outputMap = initOutputMap(getInterpreter())
 
     val inferenceStartTimeNanos = SystemClock.elapsedRealtimeNanos()
     getInterpreter().runForMultipleInputsOutputs(inputArray, outputMap)
     lastInferenceTimeNanos = SystemClock.elapsedRealtimeNanos() - inferenceStartTimeNanos
-//    Log.i(
-//      "posenet",
-//      String.format("Interpreter took %.2f ms", 1.0f * lastInferenceTimeNanos / 1_000_000)
-//    )
 
     val heatmaps = outputMap[0] as Array<Array<Array<FloatArray>>>
     val offsets = outputMap[1] as Array<Array<Array<FloatArray>>>
@@ -243,11 +229,9 @@ class Posenet(
       var maxRow = 0
       var maxCol = 0
 
-//      val pixels = IntArray(height * width)
 
       for (row in 0 until height) {
         for (col in 0 until width) {
-          heatmaps[0][row][col][keypoint] = heatmaps[0][row][col][keypoint]
           if (heatmaps[0][row][col][keypoint] > maxVal) {
             maxVal = heatmaps[0][row][col][keypoint]
             maxRow = row
@@ -255,15 +239,6 @@ class Posenet(
           }
         }
       }
-
-//      for ( in pixels) {
-//          heatmaps[0][row][col][keypoint] = heatmaps[0][row][col][keypoint]
-//          if (heatmaps[0][row][col][keypoint] > maxVal) {
-//            maxVal = heatmaps[0][row][col][keypoint]
-//            maxRow = row
-//            maxCol = col
-//          }
-//      }
 
       keypointPositions[keypoint] = Pair(maxRow, maxCol)
     }
