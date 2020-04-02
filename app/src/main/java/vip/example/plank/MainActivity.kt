@@ -37,16 +37,14 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         if (isFirstTime) {
-            // show dialog
-            val fragmentManager = fragmentManager
-
-            // DialogFragment を継承したAlertDialogFragmentのインスタンス
-            val dialogFragment = MainActivity.AlertDialogFragment()
-            // DialogFragmentの表示
-            dialogFragment.show(fragmentManager, "test alert dialog")
+            AlertDialog.Builder(this)
+                .setTitle("使い方！")
+                .setView(R.layout.activity_help1)
+                .setPositiveButton( "OK", null )
+                .show()
         }
 
-        val imageView = findViewById<ImageView>(R.id.image_view)
+//        val imageView = findViewById<ImageView>(R.id.image_view)
         //        imageView.setImageResource(R.drawable.plank01);
 
         //カメラモードに移動
@@ -65,15 +63,15 @@ class MainActivity : AppCompatActivity() {
 
         val helpButton = findViewById<ImageButton>(R.id.helpButton)
 
-        // ボタンタップでAlertを表示させる
+        // ボタンタップでhelpを表示させる
         helpButton.setOnClickListener {
-            val fragmentManager = fragmentManager
-
-            // DialogFragment を継承したAlertDialogFragmentのインスタンス
-            val dialogFragment = MainActivity.AlertDialogFragment()
-            // DialogFragmentの表示
-            dialogFragment.show(fragmentManager, "test alert dialog")
+            AlertDialog.Builder(this)
+                .setTitle("使い方！")
+                .setView(R.layout.activity_help1)
+                .setPositiveButton( "OK", null )
+                .show()
         }
+
 
         //アンケートに移動
         val QuestionnaireButton = findViewById<ImageButton>(R.id.QuestionnaireButton)
@@ -85,33 +83,7 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    fun setTextView(message: String) {
 
-    }
-
-    // DialogFragment を継承したクラス
-    class AlertDialogFragment : DialogFragment() {
-        // 選択肢のリスト
-        private val menulist = arrayOf("選択(1)", "選択(2)", "選択(3)")
-
-        @RequiresApi(api = Build.VERSION_CODES.M)
-        override fun onCreateDialog(savedInstanceState: Bundle): Dialog {
-
-            val alert = AlertDialog.Builder(activity)
-
-            // タイトル
-            alert.setTitle("このアプリの使い方")
-            alert.setView(R.layout.activity_help_main)
-            alert.setPositiveButton("OK", null)
-
-            return alert.create()
-        }
-
-        private fun setMassage(message: String) {
-            val mainActivity = activity as MainActivity
-            // mainActivity.setTextView(message);
-        }
-    }
 
 }
 
